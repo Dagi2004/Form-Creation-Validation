@@ -10,11 +10,11 @@ document.addEventListener("DOMContentLoaded", () => {
     let isValid = true;
     let messages = [];
 
-    if (usernameInput.length < 3) {
+    if (username.length < 3) {
       isValid = false;
       messages = "Username must have length greater than 3";
     }
-    if (passwordInput.length < 8) {
+    if (password.length < 8) {
       isValid = false;
       messages.push("Password must have atleast 8 characters");
     }
@@ -25,8 +25,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     feedbackDiv.style.display = "block";
-    if (!isValid) {
-      feedbackDiv.textContent = "Registration successful";
+    if (isValid) {
+      feedbackDiv.textContent = "Registration successful!";
       feedbackDiv.style.color = "#28a745";
     } else {
       feedbackDiv.innerHTML = messages.join("<br>");
